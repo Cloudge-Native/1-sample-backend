@@ -21,7 +21,7 @@ app.get("/secret", async (req: Request, res: Response) => {
     res.send(`Secret message found, it says: ${response.data.secret}`)
   })
   .catch(() => {
-    res.status(404).send("There's a sick new functionality, but can't communicate with the secret backend")
+    res.status(404).send("There's a crazy groundbreaking new functionality, but can't seem to communicate with the secret backend")
   })
 })
 */
