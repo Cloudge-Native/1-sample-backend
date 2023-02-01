@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
 import * as cors from "cors";
+import axios from "axios";
 
 const app = express();
 const port = 8080;
@@ -12,9 +13,17 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 /*
-app.get('/v2', (req: Request, res: Response) => {
-  res.send("There are some crazy groundbreaking new functionalities in version 2 :o")
-});
+app.get("/secret", async (req: Request, res: Response) => {
+  await axios.get("http://docker_backend:8081", {
+    method: "GET"
+  })
+  .then((response) => {
+    res.send(`Secret message found, it says: ${response.data.secret}`)
+  })
+  .catch(() => {
+    res.status(404).send("There's a sick new functionality, but can't communicate with the secret backend")
+  })
+})
 */
 
 app.listen(port, () => {
