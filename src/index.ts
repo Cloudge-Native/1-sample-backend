@@ -14,7 +14,7 @@ app.get('/', (req: Request, res: Response) => {
 
 /*
 app.get("/secret", async (req: Request, res: Response) => {
-  await axios.get("http://docker_backend:8081", {
+  await axios.get("http://secret_backend:8081", {
     method: "GET"
   })
   .then((response) => {
